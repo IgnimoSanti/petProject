@@ -1,0 +1,12 @@
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+
+export function validateCode(code:string) {
+  const allowedChars = /^[0-9A-Za-z_\-]{18}$/;
+  return allowedChars.test(code);
+}
